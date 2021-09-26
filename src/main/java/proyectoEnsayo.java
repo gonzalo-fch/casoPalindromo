@@ -25,4 +25,38 @@ public class proyectoEnsayo {
         } while (numero <= 0);
         return numero;
     }
+
+    public static int promedioArreglo(int[] arreglo) {
+        int promedio = 0;
+        for (int i = 0; i < arreglo.length; i++) {
+            promedio += arreglo[i];
+        }
+        promedio /= arreglo.length;
+        return promedio;
+
+    }
+    public static int[] ordenarNumero(int[] numeros) {
+        int[] ultima;
+        int aux;
+        for (int i = 0; i < numeros.length - 1; i++) {
+            for (int j = 0; j < numeros.length - i - 1; j++) {
+                if (numeros[j + 1] < numeros[j]) {
+                    aux = numeros[j + 1];
+                    numeros[j + 1] = numeros[j];
+                    numeros[j] = aux;
+                    // System.out.println("aux" + aux);
+                }
+            }
+        }
+        ultima = numeros;
+        System.out.println("ORDENADOS MENOR-MAYOR");
+        for (int i = 0; i < numeros.length; i++) {
+
+            System.out.println("Posicion [" + (i + 1) + "] =" + ultima[i]);
+
+        }
+        return ultima;
+
+    }
+
 }
